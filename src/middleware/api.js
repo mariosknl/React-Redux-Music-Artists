@@ -1,6 +1,10 @@
 import axios from 'axios';
 import * as actions from '../actions/api';
 
+require('dotenv').config({ path: '../.env' });
+
+const apiKey = process.env.REACT_APP_API_KEY;
+
 const api = ({ dispatch }) => next => async action => {
   if (action.type !== actions.apiCallStarted.type) return next(action);
 
@@ -12,7 +16,7 @@ const api = ({ dispatch }) => next => async action => {
 
   try {
     const response = await axios.request({
-      baseURL: '',
+      baseURL: `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=${apiKey}&format=json`,
       url,
       method,
       data,
@@ -26,4 +30,5 @@ const api = ({ dispatch }) => next => async action => {
   }
 };
 
+console.log(api);
 export default api;
