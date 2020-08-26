@@ -30,5 +30,4 @@ const api = ({ dispatch }) => next => async action => {
   }
 };
 
-console.log(api);
 export default api;
