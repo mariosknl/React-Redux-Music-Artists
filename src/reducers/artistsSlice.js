@@ -24,7 +24,7 @@ const artistsSlice = createSlice({
     },
     [fetchArtists.fulfilled]: (state, action) => {
       state.status = 'succeeded';
-      state.artists = state.artists.concat(action.payload);
+      state.artists = action.payload;
     },
     [fetchArtists.rejected]: (state, action) => {
       state.status = 'failed';
@@ -35,7 +35,7 @@ const artistsSlice = createSlice({
     },
     [fetchAlbums.fulfilled]: (state, action) => {
       state.status = 'succeeded';
-      state.albums = state.albums.concat(action.payload);
+      state.albums = action.payload;
     },
     [fetchAlbums.rejected]: (state, action) => {
       state.status = 'failed';
@@ -46,7 +46,7 @@ const artistsSlice = createSlice({
     },
     [fetchSimilarArtists.fulfilled]: (state, action) => {
       state.status = 'succeeded';
-      state.similar = state.similar.concat(action.payload);
+      state.similar = action.payload;
     },
     [fetchSimilarArtists.rejected]: (state, action) => {
       state.status = 'failed';
@@ -63,13 +63,3 @@ export const {
 } = artistsSlice.actions;
 
 export default artistsSlice.reducer;
-
-// export const loadArtists = () => dispatch => {
-//   dispatch(
-//     apiCallBegan({
-//       onStart: artistsRequested.type,
-//       onSuccess: artistsReceived.type,
-//       orError: artistRequestFailed.type,
-//     })
-//   );
-// };

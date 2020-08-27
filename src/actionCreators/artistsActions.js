@@ -5,10 +5,10 @@ require('dotenv').config({ path: '../.env' });
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
-const fetchArtists = createAsyncThunk('artists/fetchArtist', async () => {
+const fetchArtists = createAsyncThunk('artists/fetchArtist', async args => {
   const options = {
     method: 'GET',
-    url: `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=${apiKey}&format=json`,
+    url: `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${args}&api_key=${apiKey}&format=json`,
   };
   const response = await axios(options);
   console.log(response.data);

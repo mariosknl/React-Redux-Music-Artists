@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-// import topAlbums from '../actionCreators/albumsActions';
+import React, { useState, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import fetchArt from '../actionCreators/artistsActions';
+import fetchAlb from '../actionCreators/albumsActions';
+import fetchSim from '../actionCreators/similarArtists';
 
 const SearchArtist = () => {
   const [artist, setArtist] = useState('Cher');
   const [albums, setAlbums] = useState('');
+  const { fetchArtists } = fetchArt;
+  const { fetchAlbums } = fetchAlb;
+  const { fetchSimilarArtists } = fetchSim;
+  const input = useRef();
+  const dispatch = useDispatch();
 
   const topAlbums = useSelector(state => state.artists.albums);
   const similarArtists = useSelector(state => state.artists.similar);
@@ -14,10 +21,19 @@ const SearchArtist = () => {
 
   return (
     <div className="searchForm">
-      <form>
+      <form
+        onSubmit={e => {
+          e.preventDefault();
+          dispatch(fetchArtists(input.current.value));
+          dispatch(fetchAlbums(input.current.value));
+          dispatch(fetchSimilarArtists(input.current.value));
+        }}
+      >
         <label htmlFor="artist">
           Artist
           <input
+            ref={input}
+            type="text"
             id="artist"
             value={artist}
             placeholder="Search for an artist"
