@@ -11,6 +11,7 @@ const fetchArtists = createAsyncThunk('artists/fetchArtist', async () => {
     url: `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=${apiKey}&format=json`,
   };
   const response = await axios(options);
+  console.log(response.data);
   return response.data;
 });
 
