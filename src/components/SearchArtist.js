@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import fetchArt from '../actionCreators/artistsActions';
 import fetchAlb from '../actionCreators/albumsActions';
 import fetchSim from '../actionCreators/similarArtists';
+import SimilarArtists from './SimilarArtists';
 
 const SearchArtist = () => {
   const { fetchArtists } = fetchArt;
@@ -60,12 +61,10 @@ const SearchArtist = () => {
 
       <div>
         {similarArtists.map(similar => (
-          <img
+          <SimilarArtists
             key={similar.name}
-            src={similar.image[0]}
-            height="200"
-            width="200"
-            alt={similar.name}
+            name={similar.name}
+            image={similar.image[1].text}
           />
         ))}
       </div>
