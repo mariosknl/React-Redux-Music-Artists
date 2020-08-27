@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import fetchArt from '../actionCreators/artistsActions';
 import fetchAlb from '../actionCreators/albumsActions';
@@ -40,7 +39,7 @@ const SearchArtist = () => {
             onBlur={Formik.handleBlur}
           />
         </label>
-        <label htmlFor="genre">
+        <label htmlFor="albums">
           Top 10 Albums
           <select
             id="topAlbums"
@@ -58,9 +57,16 @@ const SearchArtist = () => {
         </label>
         <button type="submit">Search</button>
       </form>
+
       <div>
         {similarArtists.map(similar => (
-          <p key={similar.name}>{similar.name}</p>
+          <img
+            key={similar.name}
+            src={similar.image[0]}
+            height="200"
+            width="200"
+            alt={similar.name}
+          />
         ))}
       </div>
     </div>
