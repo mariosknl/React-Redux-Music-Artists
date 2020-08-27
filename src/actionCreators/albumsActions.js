@@ -11,8 +11,8 @@ const fetchAlbums = createAsyncThunk('artists/fetchAlbums', async args => {
     url: `http://ws.audioscrobbler.com//2.0/?method=artist.gettopalbums&artist=${args}&api_key=${apiKey}&format=json`,
   };
   const response = await axios(options);
-  console.log(response.data.topalbums.album.slice(0, 5));
-  return response.data.topalbums.album.slice(0, 5);
+
+  return response.data.topalbums.album.slice(0, 10);
 });
 
 export default { fetchAlbums };

@@ -1,53 +1,52 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+// import * as Yup from 'yup';
+import { useFormik } from 'formik';
 import fetchArt from '../actionCreators/artistsActions';
 import fetchAlb from '../actionCreators/albumsActions';
 import fetchSim from '../actionCreators/similarArtists';
 
 const SearchArtist = () => {
-  const [artist, setArtist] = useState('Cher');
-  const [albums, setAlbums] = useState('');
   const { fetchArtists } = fetchArt;
   const { fetchAlbums } = fetchAlb;
   const { fetchSimilarArtists } = fetchSim;
-  const input = useRef();
   const dispatch = useDispatch();
 
   const topAlbums = useSelector(state => state.artists.albums);
   const similarArtists = useSelector(state => state.artists.similar);
 
+  const Formik = useFormik({
+    initialValues: { artist: '', topAlbums: '' },
+    onSubmit: values => {
+      dispatch(fetchArtists(values.artist));
+      dispatch(fetchAlbums(values.artist));
+      dispatch(fetchSimilarArtists(values.artist));
+    },
+  });
+
   if (!topAlbums) return <p>loading</p>;
   if (!similarArtists) return <p>loading similar...</p>;
-
   return (
     <div className="searchForm">
-      <form
-        onSubmit={e => {
-          e.preventDefault();
-          dispatch(fetchArtists(input.current.value));
-          dispatch(fetchAlbums(input.current.value));
-          dispatch(fetchSimilarArtists(input.current.value));
-        }}
-      >
+      <form onSubmit={Formik.handleSubmit}>
         <label htmlFor="artist">
           Artist
           <input
-            ref={input}
             type="text"
             id="artist"
-            value={artist}
+            value={Formik.artist}
             placeholder="Search for an artist"
-            onChange={e => setArtist(e.target.value)}
-            onBlur={e => setArtist(e.target.value)}
+            onChange={Formik.handleChange}
+            onBlur={Formik.handleBlur}
           />
         </label>
         <label htmlFor="genre">
           Top 10 Albums
           <select
             id="topAlbums"
-            value={albums}
-            onChange={e => setAlbums(e.target.value)}
-            onBlur={e => setAlbums(e.target.value)}
+            value={Formik.topAlbums}
+            onChange={Formik.handleChange}
+            onBlur={Formik.handleBlur}
           >
             <option>---</option>
             {topAlbums.map(topAlbum => (
