@@ -1,10 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import reducer from '../reducers/reducer';
-import api from '../middleware/api';
+import artistsReducer from '../reducers/artistsSlice';
 
-export default function store() {
-  return configureStore({
-    reducer,
-    middleware: [api],
-  });
-}
+export default configureStore({
+  reducer: {
+    artists: artistsReducer,
+  },
+});

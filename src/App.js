@@ -1,16 +1,13 @@
-import React from 'react';
-import configureStore from './store/configureStore';
-import {
-  artistsRequested,
-  artistsReceived,
-  artistRequestFailed,
-  artistsAdded,
-} from './reducers/artists';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import actions from './actionCreators/artistsActions';
 
-const store = configureStore();
-
-function App() {
-  return <div className="App" />;
-}
+const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(actions.fetchArtists());
+  }, []);
+  return <p>rendering</p>;
+};
 
 export default App;
