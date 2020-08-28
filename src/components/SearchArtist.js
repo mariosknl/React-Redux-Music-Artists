@@ -14,7 +14,6 @@ const SearchArtist = () => {
   const dispatch = useDispatch();
 
   const topAlbums = useSelector(state => state.artists.albums);
-  // const similarArtists = useSelector(state => state.artists.similar);
 
   const Formik = useFormik({
     initialValues: { artist: '', topAlbums: '' },
