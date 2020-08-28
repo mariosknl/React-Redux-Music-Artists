@@ -14,7 +14,7 @@ const SearchArtist = () => {
   const dispatch = useDispatch();
 
   const topAlbums = useSelector(state => state.artists.albums);
-  const similarArtists = useSelector(state => state.artists.similar);
+  // const similarArtists = useSelector(state => state.artists.similar);
 
   const Formik = useFormik({
     initialValues: { artist: '', topAlbums: '' },
@@ -59,13 +59,7 @@ const SearchArtist = () => {
       </form>
 
       <div>
-        {similarArtists.map(similar => (
-          <Similar
-            key={similar.name}
-            name={similar.name}
-            image={similar.image[1].text}
-          />
-        ))}
+        <Similar />
       </div>
       <div>
         <ArtistInfo />

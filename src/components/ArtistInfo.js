@@ -5,7 +5,6 @@ function ArtistInfo() {
   const artists = useSelector(state => state.artists);
 
   if (artists.artists.length === 0);
-  console.log(artists.artists);
 
   let bio = false;
   if (!artists.artists.artist) {
