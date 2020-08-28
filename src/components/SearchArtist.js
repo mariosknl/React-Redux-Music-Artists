@@ -6,6 +6,7 @@ import fetchAlb from '../actionCreators/albumsActions';
 import fetchSim from '../actionCreators/similarArtists';
 import Similar from './Similar';
 import ArtistInfo from './ArtistInfo';
+import FormStyles from '../styles/FormStyles.styles.tw';
 
 const SearchArtist = () => {
   const { fetchArtists } = fetchArt;
@@ -25,37 +26,41 @@ const SearchArtist = () => {
   });
 
   return (
-    <div className="searchForm">
-      <form onSubmit={Formik.handleSubmit}>
-        <label htmlFor="artist">
-          Artist
-          <input
-            type="text"
-            id="artist"
-            value={Formik.artist}
-            placeholder="Search for an artist"
-            onChange={Formik.handleChange}
-            onBlur={Formik.handleBlur}
-          />
-        </label>
-        <label htmlFor="albums">
-          Top 10 Albums
-          <select
-            id="topAlbums"
-            value={Formik.topAlbums}
-            onChange={Formik.handleChange}
-            onBlur={Formik.handleBlur}
-          >
-            <option>---</option>
-            {topAlbums.map(topAlbum => (
-              <option key={topAlbum.playcount} value={topAlbum.name}>
-                {topAlbum.name}
-              </option>
-            ))}
-          </select>
-        </label>
-        <button type="submit">Search</button>
-      </form>
+    <>
+      <FormStyles>
+        <div className="containerForm">
+          <form onSubmit={Formik.handleSubmit}>
+            <label htmlFor="artist" className="artistForm">
+              Artist
+              <input
+                type="text"
+                id="artist"
+                value={Formik.artist}
+                placeholder="Search for an artist"
+                onChange={Formik.handleChange}
+                onBlur={Formik.handleBlur}
+              />
+            </label>
+            <label htmlFor="albums">
+              Top 10 Albums
+              <select
+                id="topAlbums"
+                value={Formik.topAlbums}
+                onChange={Formik.handleChange}
+                onBlur={Formik.handleBlur}
+              >
+                <option>---</option>
+                {topAlbums.map(topAlbum => (
+                  <option key={topAlbum.playcount} value={topAlbum.name}>
+                    {topAlbum.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <button type="submit">Search</button>
+          </form>
+        </div>
+      </FormStyles>
 
       <div>
         <Similar />
@@ -63,7 +68,7 @@ const SearchArtist = () => {
       <div>
         <ArtistInfo />
       </div>
-    </div>
+    </>
   );
 };
 

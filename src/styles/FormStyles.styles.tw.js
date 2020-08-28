@@ -1,21 +1,29 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-const FormStyles = styled.form.attr({
-  className: 'w-75 max-w-sm',
+const FormStyles = styled.div.attrs({
+  className: 'w-9/12 mx-auto text-center rounded',
 })`
   & {
     .containerForm {
-      ${tw`flex items-center border-b border-teal-500 py-2`}
+      ${tw`w-full py-2`}
+    }
+    form {
+      ${tw`w-full bg-white rounded`}
+    }
+    {
+    & .artistForm {
+      ${tw`font-mono text-lg text-gray-800 font-bold`}
+    }
     }
     input {
-      ${tw`appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight`}
+      ${tw`w-64 appearance-none border-none text-gray-300 mr-3 py-1 px-2 leading-tight`}
     }
     input:focus {
-      ${tw`outline-none`}
+      ${tw`outline-none border-2`}
     }
     button {
-      ${tw`flex-shrink-0 bg-teal-500`}
+      ${tw`w-20 flex-shrink-0 bg-teal-500 rounded self-center`}
     }
     button:hover {
       ${tw`bg-teal-700 border-teal-500`}
