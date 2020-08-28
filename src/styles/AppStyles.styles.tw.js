@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
@@ -7,10 +6,13 @@ const AppStyles = styled.div.attrs({
 })`
   & {
     h1 {
-      ${tw`font-sans text-6xl text-center font-hairlinw text-6xl text-teal-500`}
+      ${tw`font-mono text-5xl text-center text-gray-100  mt-5`}
     }
     .container {
-      ${tw`w-full h-screen bg-gray-300`}
+      ${tw`h-full bg-gray-600`}
+    }
+    p {
+      ${tw`underline text-2xl text-bold text-center tracking-widest subpixel-antialiased font-mono`}
     }
   }
 `;
