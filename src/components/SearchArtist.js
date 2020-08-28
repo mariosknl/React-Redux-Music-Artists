@@ -4,7 +4,8 @@ import { useFormik } from 'formik';
 import fetchArt from '../actionCreators/artistsActions';
 import fetchAlb from '../actionCreators/albumsActions';
 import fetchSim from '../actionCreators/similarArtists';
-import SimilarArtists from './SimilarArtists';
+import Similar from './Similar';
+import ArtistInfo from './ArtistInfo';
 
 const SearchArtist = () => {
   const { fetchArtists } = fetchArt;
@@ -24,8 +25,6 @@ const SearchArtist = () => {
     },
   });
 
-  if (!topAlbums) return <p>loading</p>;
-  if (!similarArtists) return <p>loading similar...</p>;
   return (
     <div className="searchForm">
       <form onSubmit={Formik.handleSubmit}>
@@ -61,12 +60,15 @@ const SearchArtist = () => {
 
       <div>
         {similarArtists.map(similar => (
-          <SimilarArtists
+          <Similar
             key={similar.name}
             name={similar.name}
             image={similar.image[1].text}
           />
         ))}
+      </div>
+      <div>
+        <ArtistInfo />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SimilarArtists(props) {
+function Similar(props) {
   const { name, image } = props;
   return (
     <>
@@ -10,4 +10,4 @@ function SimilarArtists(props) {
   );
 }
 
-export default SimilarArtists;
+export default Similar;

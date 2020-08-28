@@ -11,7 +11,6 @@ const fetchArtists = createAsyncThunk('artists/fetchArtist', async args => {
     url: `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${args}&api_key=${apiKey}&format=json`,
   };
   const response = await axios(options);
-  console.log(response.data);
   return response.data;
 });
 

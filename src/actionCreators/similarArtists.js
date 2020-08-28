@@ -13,7 +13,6 @@ const fetchSimilarArtists = createAsyncThunk(
       url: `http://ws.audioscrobbler.com//2.0/?method=artist.getsimilar&artist=${args}&api_key=${apiKey}&format=json`,
     };
     const response = await axios(options);
-    console.log(response.data.similarartists.artist[0].image[0]);
     return response.data.similarartists.artist.slice(0, 9);
   },
 );
