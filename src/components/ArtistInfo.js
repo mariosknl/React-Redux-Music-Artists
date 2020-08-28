@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 function ArtistInfo() {
@@ -6,28 +8,24 @@ function ArtistInfo() {
 
   if (artists.artists.length === 0);
 
-  let bio = false;
-  let name = '';
-  let stats = '';
-  let plays = '';
-  let url = false;
   if (!artists.artists.artist) {
     return '';
   }
-  name = artists.artists.artist.name;
-  bio = artists.artists.artist.bio.summary;
-  stats = artists.artists.artist.stats.listeners;
-  plays = artists.artists.artist.stats.playcount;
-  url = artists.artists.artist.url;
+  const { name } = artists.artists.artist;
+  const { url } = artists.artists.artist;
+
+  const bio = artists.artists.artist.bio.summary;
+  const stats = artists.artists.artist.stats.listeners;
+  const plays = artists.artists.artist.stats.playcount;
 
   return (
-    <>
+    <Router>
       <h2>{name}</h2>
       <p>{bio}</p>
-      <p>{stats}</p>
-      <p>{plays}</p>
-      <p>{url}</p>
-    </>
+      <p>Listeners: {stats}</p>
+      <p>Playcount: {plays}</p>
+      <a href={`${url}`}>{name} @ Last.fm</a>
+    </Router>
   );
 }
 
