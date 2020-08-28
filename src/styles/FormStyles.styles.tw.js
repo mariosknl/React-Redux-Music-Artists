@@ -9,12 +9,10 @@ const FormStyles = styled.div.attrs({
       ${tw`w-full py-2`}
     }
     form {
-      ${tw`w-full bg-white rounded`}
+      ${tw`w-full bg-white rounded py-3`}
     }
-    {
     & .artistForm {
       ${tw`font-mono text-lg text-gray-800 font-bold`}
-    }
     }
     input {
       ${tw`w-64 appearance-none border-none text-gray-300 mr-3 py-1 px-2 leading-tight`}
@@ -23,14 +21,13 @@ const FormStyles = styled.div.attrs({
       ${tw`outline-none border-2`}
     }
     button {
-      ${tw`w-20 flex-shrink-0 bg-teal-500 rounded self-center`}
+      ${tw`w-20 flex-shrink-0 bg-teal-500 rounded self-end`}
     }
     button:hover {
       ${tw`bg-teal-700 border-teal-500`}
     }
     button:hover {
-      ${tw`bg-teal-700 text-sm border-4 text-white py-1 px-2 rounded`}
-    }
+      ${tw`bg-teal-700 text-sm border-4 py-1 text-white px-2 rounded`}
     }
   }
 `;
