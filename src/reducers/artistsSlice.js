@@ -5,7 +5,7 @@ import fetchArt from '../actionCreators/artistsActions';
 import fetchTop from '../actionCreators/albumsActions';
 import similarArt from '../actionCreators/similarArtists';
 
-const { fetchArtists } = fetchArt;
+const { fetchArtists, fetchImages } = fetchArt;
 const { fetchAlbums } = fetchTop;
 const { fetchSimilarArtists } = similarArt;
 
@@ -50,6 +50,16 @@ const artistsSlice = createSlice({
     },
     [fetchSimilarArtists.rejected]: (state, action) => {
       state.status = 'failed';
+      state.error = action.error.message;
+    },
+    [fetchImages.pending]: state => {
+      state.status = 'loading';
+    },
+    [fetchImages.fulfilled]: (state, action) => {
+      state.status = 'succeeded';
+      state.image = action.payload;
+    },
+    [fetchImages.rejected]: (state, action) => {
       state.error = action.error.message;
     },
   },

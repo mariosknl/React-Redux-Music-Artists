@@ -7,21 +7,10 @@ const apiKey = process.env.REACT_APP_API_KEY;
 
 const fetchImages = createAsyncThunk('artists/artistImage', async args => {
   const options = {
-    method: 'GET',
-    url:
-      'https://cors-anywhere.herokuapp.com/https://musicbrainz.org/release/76df3287-6cda-33eb-8e9a-044b5e15ffdd',
-    origin: '*',
-    withCredentials: true,
-    HOST: 'coverartarchive.org',
-    'Content-Type': 'application/json',
-    header: {
-      'Access-Control-Allow-Origin': '*',
-      'Cross-Domain': true,
-    },
+    url: `https://www.theaudiodb.com/api/v1/json/1/search.php?s=${args}`,
   };
   const response = await axios(options);
-  console.log(response.data);
-  return response.data;
+  return response.data.artists[0].strArtistThumb;
 });
 
 const fetchArtists = createAsyncThunk(
@@ -32,10 +21,9 @@ const fetchArtists = createAsyncThunk(
       url: `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${args}&api_key=${apiKey}&format=json`,
     };
     const response = await axios(options);
-    console.log(response.data);
-    thunkAPI.dispatch(fetchImages(response.data.artist.mbid));
+    thunkAPI.dispatch(fetchImages(args));
     return response.data;
   },
 );
 
-export default { fetchArtists };
+export default { fetchArtists, fetchImages };
