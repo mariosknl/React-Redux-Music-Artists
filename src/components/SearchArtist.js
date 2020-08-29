@@ -15,10 +15,8 @@ import ArtistInfoStyles from '../styles/ArtistiInfo.styles.tw';
 import ArtistDetailsStyles from '../styles/ArtistDetails.styles.tw';
 
 const SearchArtist = () => {
-  // const { fetchArtists } = fetchArt;
   const { fetchAlbums } = fetchAlb;
   const { fetchSimilarArtists } = fetchSim;
-  // const { fetchImages } = fetchImg;
   const dispatch = useDispatch();
 
   const Formik = useFormik({
@@ -52,10 +50,13 @@ const SearchArtist = () => {
         </div>
       </FormStyles>
 
-      <ArtistImage />
-
       <ArtistInfoStyles>
-        <ArtistInfo />
+        <div>
+          <ArtistInfo />
+        </div>
+        <div>
+          <ArtistImage />
+        </div>
       </ArtistInfoStyles>
 
       <ArtistDetailsStyles>
