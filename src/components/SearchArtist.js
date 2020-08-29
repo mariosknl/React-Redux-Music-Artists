@@ -1,22 +1,24 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
-import fetchArt from '../actionCreators/artistsActions';
+import { fetchArtists, fetchImages } from '../actionCreators/artistsActions';
 import fetchAlb from '../actionCreators/albumsActions';
 import fetchSim from '../actionCreators/similarArtists';
 import ArtistInfo from './ArtistInfo';
 import Similar from './Similar';
 import TopAlbums from './TopAlbums';
 import ArtistDetails from './ArtistDetails';
+import ArtistImage from './ArtistImage';
 import FormStyles from '../styles/FormStyles.styles.tw';
 import SimilarStyles from '../styles/SimilarStyles.tw';
 import ArtistInfoStyles from '../styles/ArtistiInfo.styles.tw';
 import ArtistDetailsStyles from '../styles/ArtistDetails.styles.tw';
 
 const SearchArtist = () => {
-  const { fetchArtists } = fetchArt;
+  // const { fetchArtists } = fetchArt;
   const { fetchAlbums } = fetchAlb;
   const { fetchSimilarArtists } = fetchSim;
+  // const { fetchImages } = fetchImg;
   const dispatch = useDispatch();
 
   const Formik = useFormik({
@@ -25,6 +27,7 @@ const SearchArtist = () => {
       dispatch(fetchArtists(values.artist));
       dispatch(fetchAlbums(values.artist));
       dispatch(fetchSimilarArtists(values.artist));
+      dispatch(fetchImages(values.artist));
     },
   });
 
@@ -48,6 +51,8 @@ const SearchArtist = () => {
           </form>
         </div>
       </FormStyles>
+
+      <ArtistImage />
 
       <ArtistInfoStyles>
         <ArtistInfo />

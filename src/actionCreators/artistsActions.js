@@ -5,15 +5,18 @@ require('dotenv').config({ path: '../.env' });
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
-const fetchImages = createAsyncThunk('artists/artistImage', async args => {
-  const options = {
-    url: `https://www.theaudiodb.com/api/v1/json/1/search.php?s=${args}`,
-  };
-  const response = await axios(options);
-  return response.data.artists[0].strArtistThumb;
-});
+export const fetchImages = createAsyncThunk(
+  'artists/artistImage',
+  async args => {
+    const options = {
+      url: `https://www.theaudiodb.com/api/v1/json/1/search.php?s=${args}`,
+    };
+    const response = await axios(options);
+    return response.data.artists[0].strArtistThumb;
+  },
+);
 
-const fetchArtists = createAsyncThunk(
+export const fetchArtists = createAsyncThunk(
   'artists/fetchArtist',
   async (args, thunkAPI) => {
     const options = {
@@ -25,5 +28,3 @@ const fetchArtists = createAsyncThunk(
     return response.data;
   },
 );
-
-export default { fetchArtists, fetchImages };
