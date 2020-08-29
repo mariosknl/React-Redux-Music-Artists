@@ -4,10 +4,14 @@ import { useFormik } from 'formik';
 import fetchArt from '../actionCreators/artistsActions';
 import fetchAlb from '../actionCreators/albumsActions';
 import fetchSim from '../actionCreators/similarArtists';
-import Similar from './Similar';
 import ArtistInfo from './ArtistInfo';
+import Similar from './Similar';
+import TopAlbums from './TopAlbums';
+import ArtistDetails from './ArtistDetails';
 import FormStyles from '../styles/FormStyles.styles.tw';
 import SimilarStyles from '../styles/SimilarStyles.tw';
+import ArtistInfoStyles from '../styles/ArtistiInfo.styles.tw';
+import ArtistDetailsStyles from '../styles/ArtistDetails.styles.tw';
 
 const SearchArtist = () => {
   const { fetchArtists } = fetchArt;
@@ -16,7 +20,7 @@ const SearchArtist = () => {
   const dispatch = useDispatch();
 
   const Formik = useFormik({
-    initialValues: { artist: '' },
+    initialValues: { artist: '', topAlbums: '' },
     onSubmit: values => {
       dispatch(fetchArtists(values.artist));
       dispatch(fetchAlbums(values.artist));
@@ -45,14 +49,20 @@ const SearchArtist = () => {
         </div>
       </FormStyles>
 
-      <div>
-        <SimilarStyles>
-          <Similar />
-        </SimilarStyles>
-      </div>
-      <div>
+      <ArtistInfoStyles>
         <ArtistInfo />
-      </div>
+      </ArtistInfoStyles>
+
+      <ArtistDetailsStyles>
+        <h3>Stats</h3>
+        <ArtistDetails />
+      </ArtistDetailsStyles>
+
+      <TopAlbums />
+
+      <SimilarStyles>
+        <Similar />
+      </SimilarStyles>
     </>
   );
 };
