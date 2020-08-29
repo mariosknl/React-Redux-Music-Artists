@@ -6,7 +6,7 @@ function Similar() {
 
   return (
     <>
-      <h1>Similar Artists</h1>
+      {similarArtists.length === 0 ? '' : <h1>Similar Artists</h1>}
       <ul>
         {similarArtists.map(similar => (
           <li key={similar.name}>{similar.name}</li>

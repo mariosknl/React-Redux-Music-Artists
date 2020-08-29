@@ -54,7 +54,6 @@ const SearchArtist = () => {
       </ArtistInfoStyles>
 
       <ArtistDetailsStyles>
-        <h3>Stats</h3>
         <ArtistDetails />
       </ArtistDetailsStyles>
 

@@ -3,7 +3,7 @@ import tw from 'tailwind.macro';
 
 const ArtistDetailsStyles = styled.div.attrs({
   className:
-    'w-1/4 h-32 flex flex-col border text-gray-300 text-center text-2xl',
+    'w-1/4 h-64 flex flex-col border text-gray-300 text-center text-2xl',
 })`
   & {
     span {
