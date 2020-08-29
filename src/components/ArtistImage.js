@@ -2,15 +2,17 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 function ArtistImage() {
-  const image = useSelector(state => state.artists);
+  const imageState = useSelector(state => state.artists);
 
-  if (!image) {
+  if (!imageState) {
     return '';
   }
 
+  const imageUrl = imageState.image;
+
   return (
     <>
-      <img src={`${image}`} alt={`${image}`} />
+      <img src={`${imageUrl}`} alt={`${imageUrl}`} />
     </>
   );
 }
