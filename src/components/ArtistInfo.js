@@ -22,8 +22,8 @@ function ArtistInfo() {
     <Router>
       <h2>{name}</h2>
       <p>{bio}</p>
-      <p>Listeners: {stats}</p>
-      <p>Playcount: {plays}</p>
+      <span>Listeners: {stats}</span>
+      <span>Playcount: {plays}</span>
       <a href={`${url}`}>{name} @ Last.fm</a>
     </Router>
   );

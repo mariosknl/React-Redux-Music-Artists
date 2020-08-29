@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import fetchArt from '../actionCreators/artistsActions';
 import fetchAlb from '../actionCreators/albumsActions';
@@ -7,6 +7,7 @@ import fetchSim from '../actionCreators/similarArtists';
 import Similar from './Similar';
 import ArtistInfo from './ArtistInfo';
 import FormStyles from '../styles/FormStyles.styles.tw';
+import SimilarStyles from '../styles/SimilarStyles.tw';
 
 const SearchArtist = () => {
   const { fetchArtists } = fetchArt;
@@ -14,10 +15,8 @@ const SearchArtist = () => {
   const { fetchSimilarArtists } = fetchSim;
   const dispatch = useDispatch();
 
-  const topAlbums = useSelector(state => state.artists.albums);
-
   const Formik = useFormik({
-    initialValues: { artist: '', topAlbums: '' },
+    initialValues: { artist: '' },
     onSubmit: values => {
       dispatch(fetchArtists(values.artist));
       dispatch(fetchAlbums(values.artist));
@@ -41,29 +40,15 @@ const SearchArtist = () => {
                 onBlur={Formik.handleBlur}
               />
             </label>
-            <label htmlFor="albums">
-              Top 10 Albums
-              <select
-                id="topAlbums"
-                value={Formik.topAlbums}
-                onChange={Formik.handleChange}
-                onBlur={Formik.handleBlur}
-              >
-                <option>---</option>
-                {topAlbums.map(topAlbum => (
-                  <option key={topAlbum.playcount} value={topAlbum.name}>
-                    {topAlbum.name}
-                  </option>
-                ))}
-              </select>
-            </label>
             <button type="submit">Search</button>
           </form>
         </div>
       </FormStyles>
 
       <div>
-        <Similar />
+        <SimilarStyles>
+          <Similar />
+        </SimilarStyles>
       </div>
       <div>
         <ArtistInfo />

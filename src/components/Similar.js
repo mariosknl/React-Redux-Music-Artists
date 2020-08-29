@@ -6,9 +6,12 @@ function Similar() {
 
   return (
     <>
-      {similarArtists.map(similar => (
-        <p key={similar.name}>{similar.name}</p>
-      ))}
+      <h1>Similar Artists</h1>
+      <ul>
+        {similarArtists.map(similar => (
+          <li key={similar.name}>{similar.name}</li>
+        ))}
+      </ul>
     </>
   );
 }
