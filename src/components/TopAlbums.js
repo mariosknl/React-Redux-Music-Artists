@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 
 function TopAlbums() {
   const topAlbums = useSelector(state => state.artists.albums);
@@ -11,22 +12,22 @@ function TopAlbums() {
       <ul>
         {topAlbums.map(top => (
           <>
-            <li key={top.idAlbum}>
-              <h3>{top.strAlbum}</h3>
+            <li key={uuidv4()}>
+              <h3 key={top.idAlbum}>{top.strAlbum}</h3>
               <img
-                key={top.strAlbumThumb}
                 src={`${top.strAlbumThumb}`}
                 alt={`${top.strAlbum}`}
+                key={uuidv4()}
               />
               {top.intYearReleased === null ? (
                 ''
               ) : (
-                <span key={top.strAllMusicID}>{`${top.intYearReleased}`}</span>
+                <span key={uuidv4()}>{`${top.intYearReleased}`}</span>
               )}
               {top.strLabel === null ? (
                 ''
               ) : (
-                <span key={top.strDiscogsID}> | {`${top.strLabel}`}</span>
+                <span key={uuidv4()}> | {`${top.strLabel}`}</span>
               )}
             </li>
           </>
