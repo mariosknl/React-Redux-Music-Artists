@@ -17,17 +17,11 @@ function ArtistDetails() {
 
   return (
     <Router>
-      {artists.length === 0 ? (
-        ''
-      ) : (
-        <>
-          {' '}
-          <h2>Stats</h2>
-          <span>Listeners {stats}</span>
-          <span>Playcount {plays}</span>
-          <a href={`${url}`}>{name} @ Last.fm</a>
-        </>
-      )}
+      <>
+        <span>Listeners {stats}</span>
+        <span>Playcount {plays}</span>
+        <a href={`${url}`}>{name} @ Last.fm</a>
+      </>
     </Router>
   );
 }
