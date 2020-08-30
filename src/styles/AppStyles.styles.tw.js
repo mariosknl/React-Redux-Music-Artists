@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const AppStyles = styled.div.attrs({
-  className: 'w-full h-screen flex flex-col items-center bg-gray-600',
+  className:
+    'w-full h-screen flex flex-col items-center bg-gray-600 overflow-x-hidden',
 })`
   & {
     h1 {

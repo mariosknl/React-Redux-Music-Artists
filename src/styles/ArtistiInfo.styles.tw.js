@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const ArtistInfoStyles = styled.div.attrs({
-  className: 'w-screen h-auto grid grid-cols-2 gap-6',
+  className: 'w-screen h-auto grid grid-cols-2 gap-4',
 })`
   & {
     h2 {
@@ -16,6 +16,11 @@ const ArtistInfoStyles = styled.div.attrs({
     & {
       img {
         ${tw`w-2/3 ml-4 mt-4`}
+      }
+    }
+    & {
+      span {
+        ${tw`object-right-bottom`}
       }
     }
   }

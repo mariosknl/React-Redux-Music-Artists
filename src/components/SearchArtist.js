@@ -56,12 +56,11 @@ const SearchArtist = () => {
         </div>
         <div>
           <ArtistImage />
+          <ArtistDetailsStyles>
+            <ArtistDetails />
+          </ArtistDetailsStyles>
         </div>
       </ArtistInfoStyles>
-
-      <ArtistDetailsStyles>
-        <ArtistDetails />
-      </ArtistDetailsStyles>
 
       <TopAlbums />
 
