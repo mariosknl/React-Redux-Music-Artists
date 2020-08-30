@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const TopAlbumsStyles = styled.div.attrs({
-  className: 'w-full leading-none relative',
+  className: 'w-full leading-none relative mt-20',
 })`
   & {
     h2 {
@@ -18,7 +18,7 @@ const TopAlbumsStyles = styled.div.attrs({
       ${tw`w-11/12 h-48 rounded`}
     }
     h3 {
-      ${tw`text-2xl mb-3`}
+      ${tw`text-2xl mb-3 underline`}
     }
     span {
       ${tw`text-xl`}

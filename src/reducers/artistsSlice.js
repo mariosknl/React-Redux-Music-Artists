@@ -65,11 +65,4 @@ const artistsSlice = createSlice({
   },
 });
 
-export const {
-  artistsRequested,
-  artistsReceived,
-  artistRequestFailed,
-  artistsAdded,
-} = artistsSlice.actions;
-
 export default artistsSlice.reducer;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const FormStyles = styled.div.attrs({
-  className: 'w-9/12 mx-auto text-center rounded',
+  className: 'w-6/12 mx-auto text-center rounded',
 })`
   & {
     .containerForm {
