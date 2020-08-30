@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const SimilarStyles = styled.div.attrs({
-  className: 'w-1/3 h-auto flex flex-col items-center justify-center my-2',
+  className: 'similarDiv absolute inset-y-1 top-0 right-0',
 })`
   & {
-    h1 {
-      ${tw`font-mono text-center text-gray-100 my-8`}
+    h4 {
+      ${tw`font-mono text-gray-100 text-center text-3xl`}
     }
     li {
-      ${tw`font-mono text-2xl text-center text-gray-300`}
+      ${tw`font-mono text-xl text-gray-300`}
     }
   }
 `;

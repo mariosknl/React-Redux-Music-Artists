@@ -13,6 +13,7 @@ import FormStyles from '../styles/FormStyles.styles.tw';
 import SimilarStyles from '../styles/SimilarStyles.tw';
 import ArtistInfoStyles from '../styles/ArtistiInfo.styles.tw';
 import ArtistDetailsStyles from '../styles/ArtistDetails.styles.tw';
+import TopAlbumsStyles from '../styles/TopAlbums.styles.tw';
 
 const SearchArtist = () => {
   const { fetchAlbums } = fetchAlb;
@@ -62,11 +63,12 @@ const SearchArtist = () => {
         </div>
       </ArtistInfoStyles>
 
-      <TopAlbums />
-
-      <SimilarStyles>
-        <Similar />
-      </SimilarStyles>
+      <TopAlbumsStyles>
+        <TopAlbums />
+        <SimilarStyles>
+          <Similar />
+        </SimilarStyles>
+      </TopAlbumsStyles>
     </>
   );
 };
