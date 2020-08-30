@@ -18,8 +18,8 @@ function ArtistDetails() {
   return (
     <Router>
       <>
-        <span>Listeners {stats}</span>
-        <span>Playcount {plays}</span>
+        <span>Listeners =&gt; {stats}</span>
+        <span>Playcount =&gt; {plays}</span>
         <a href={`${url}`}>{name} @ Last.fm</a>
       </>
     </Router>
