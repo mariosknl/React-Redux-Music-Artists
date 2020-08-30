@@ -8,11 +8,29 @@ import '../styles/Modal.css';
 function TopAlbums() {
   const topAlbums = useSelector(state => state.artists.albums);
   const [showModal, setModal] = useState(false);
+  const [modelContent, setModelContent] = useState('shirtLess-Micronaut');
 
-  const toggleModal = e => setModal({ e, showModal: !showModal });
+  const toggleModal = index => {
+    setModal({ showModal: !showModal });
+    setModelContent(index);
+  };
+
+  const displayModal = index => (
+    <>
+      <Modal>
+        <div className={showModal ? 'opacity-100' : 'hidden'}>
+          <p>{index}</p>
+          <button type="button" onClick={() => toggleModal()}>
+            X
+          </button>
+        </div>
+      </Modal>
+    </>
+  );
 
   return (
     <>
+      {displayModal(modelContent)}
       {topAlbums.length === 0 ? '' : <h2>Famous Albums</h2>}
       <ul>
         {topAlbums.map(top => (
@@ -24,19 +42,11 @@ function TopAlbums() {
                 alt={`${top.strAlbum}`}
                 key={uuidv4()}
               />
-              <button type="button" onClick={() => toggleModal(top.strAlbum)}>
-                {showModal ? (
-                  <Modal>
-                    <div>
-                      <p>{top.strDescriptionEN}</p>
-                      <button type="button" onClick={() => toggleModal()}>
-                        X
-                      </button>
-                    </div>
-                  </Modal>
-                ) : (
-                  <small>Album Info</small>
-                )}
+              <button
+                type="button"
+                onClick={() => toggleModal(top.strDescriptionEN)}
+              >
+                Album Info
               </button>
               {top.intYearReleased === null ? (
                 ''

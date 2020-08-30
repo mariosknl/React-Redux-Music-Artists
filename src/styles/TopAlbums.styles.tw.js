@@ -23,6 +23,13 @@ const TopAlbumsStyles = styled.div.attrs({
     span {
       ${tw`text-xl`}
     }
+    button {
+      ${tw`bg-gray-300 text-black font-bold py-2 px-2 my-1 rounded-full`}
+    }
+    button:hover {
+      ${tw`bg-gray-600 text-white`}
+    }
+
     & {
       .similarDiv {
         ${tw`w-2/6`}
