@@ -11,9 +11,9 @@ function TopAlbums() {
       {topAlbums.length === 0 ? '' : <h2>Famous Albums</h2>}
       <ul>
         {topAlbums.map(top => (
-          <>
-            <li key={uuidv4()}>
-              <h3 key={top.idAlbum}>{top.strAlbum}</h3>
+          <React.Fragment key={uuidv4()}>
+            <li key={top.strMusicBrainzID}>
+              <h3 key={uuidv4()}>{top.strAlbum}</h3>
               <img
                 src={`${top.strAlbumThumb}`}
                 alt={`${top.strAlbum}`}
@@ -30,7 +30,7 @@ function TopAlbums() {
                 <span key={uuidv4()}> | {`${top.strLabel}`}</span>
               )}
             </li>
-          </>
+          </React.Fragment>
         ))}
       </ul>
     </>
