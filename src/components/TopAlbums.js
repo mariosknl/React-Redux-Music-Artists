@@ -1,10 +1,15 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
+import Modal from './Modal';
+import '../styles/Modal.css';
 
 function TopAlbums() {
   const topAlbums = useSelector(state => state.artists.albums);
+  const [showModal, setModal] = useState(false);
+
+  const toggleModal = () => setModal({ showModal: !showModal });
 
   return (
     <>
@@ -19,6 +24,20 @@ function TopAlbums() {
                 alt={`${top.strAlbum}`}
                 key={uuidv4()}
               />
+              <button type="button" onClick={() => toggleModal()}>
+                {showModal ? (
+                  <Modal>
+                    <div>
+                      <p>{top.strDescriptionEN}</p>
+                      <button type="button" onClick={() => toggleModal()}>
+                        X
+                      </button>
+                    </div>
+                  </Modal>
+                ) : (
+                  <small>Album Info</small>
+                )}
+              </button>
               {top.intYearReleased === null ? (
                 ''
               ) : (

@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-// import { apiCallBegan } from '../actions/api';
 import { fetchArtists, fetchImages } from '../actionCreators/artistsActions';
 import fetchTop from '../actionCreators/albumsActions';
 import similarArt from '../actionCreators/similarArtists';
@@ -16,6 +15,7 @@ const artistsSlice = createSlice({
     similar: [],
     image: '',
     loading: false,
+    showModal: false,
   },
   reducers: {},
   extraReducers: {
