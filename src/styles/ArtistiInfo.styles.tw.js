@@ -8,10 +8,9 @@ const ArtistInfoStyles = styled.div.attrs({
     h2 {
       ${tw`font-mono text-4xl text-center underline font-bold text-gray-400`}
     }
-    & {
-      p {
-        ${tw`font-mono mt-4 text-base no-underline`}
-      }
+
+    .bio {
+      ${tw`font-mono text-2xl mt-4 no-underline`}
     }
     & {
       img {

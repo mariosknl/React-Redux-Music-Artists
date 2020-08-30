@@ -15,7 +15,7 @@ function ArtistInfo() {
   return (
     <>
       {artists.length === 0 ? '' : <h2>{name}</h2>}
-      <p>{copyBio[0]}</p>
+      <p className="bio">{copyBio[0]}</p>
     </>
   );
 }
