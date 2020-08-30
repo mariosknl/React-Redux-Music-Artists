@@ -24,6 +24,7 @@ const artistsSlice = createSlice({
     },
     [fetchArtists.fulfilled]: (state, action) => {
       state.status = 'succeeded';
+      state.loading = 'completed';
       state.artists = action.payload;
     },
     [fetchArtists.rejected]: (state, action) => {
@@ -35,6 +36,7 @@ const artistsSlice = createSlice({
     },
     [fetchAlbums.fulfilled]: (state, action) => {
       state.status = 'succeeded';
+      state.loading = 'completed';
       state.albums = action.payload;
     },
     [fetchAlbums.rejected]: (state, action) => {
@@ -46,6 +48,7 @@ const artistsSlice = createSlice({
     },
     [fetchSimilarArtists.fulfilled]: (state, action) => {
       state.status = 'succeeded';
+      state.loading = 'completed';
       state.similar = action.payload;
     },
     [fetchSimilarArtists.rejected]: (state, action) => {
@@ -57,6 +60,7 @@ const artistsSlice = createSlice({
     },
     [fetchImages.fulfilled]: (state, action) => {
       state.status = 'succeeded';
+      state.loading = 'completed';
       state.image = action.payload;
     },
     [fetchImages.rejected]: (state, action) => {

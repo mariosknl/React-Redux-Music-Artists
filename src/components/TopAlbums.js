@@ -9,7 +9,7 @@ function TopAlbums() {
   const topAlbums = useSelector(state => state.artists.albums);
   const [showModal, setModal] = useState(false);
 
-  const toggleModal = () => setModal({ showModal: !showModal });
+  const toggleModal = e => setModal({ e, showModal: !showModal });
 
   return (
     <>
@@ -24,7 +24,7 @@ function TopAlbums() {
                 alt={`${top.strAlbum}`}
                 key={uuidv4()}
               />
-              <button type="button" onClick={() => toggleModal()}>
+              <button type="button" onClick={() => toggleModal(top.strAlbum)}>
                 {showModal ? (
                   <Modal>
                     <div>
