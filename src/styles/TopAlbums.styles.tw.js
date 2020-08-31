@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const TopAlbumsStyles = styled.div.attrs({
-  className: 'w-full leading-none relative mt-20',
+  className: 'w-full leading-none relative mt-20 px-16',
 })`
   & {
     h2 {

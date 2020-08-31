@@ -20,3 +20,38 @@ Feel free to check the live version of my application by click the Live Demo Lin
 - Eslint
 
 # Live Version
+
+[Live-Link](https://react-redux-catalogue-of-statistics.vercel.app/)
+
+# Video Presentation
+
+[Video-Presentation](https://www.loom.com/share/f8aca88e41024884bed282e427228e22)
+
+# AUTHOR
+
+- Github: [@mariosknl](https://github.com/mariosknl)
+- Twitter: [@mariosknl](https://twitter.com/MariosKnl)
+- Linkedln: [marios-kanellopoulos](https://www.linkedin.com/in/marios-kanellopoulos)
+- Portfolio: [marios-kanellopoulos](https://marioskanellopoulos.com/)
+
+# Show your support
+
+Give ⭐️ if you like this project!
+
+# Acknowledgments
+
+- Microverse
+- [Expedito Andrade](https://github.com/expjazz)
+
+### 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+Feel free to check the issues page.
+
+### Show your support
+
+Give a ⭐️ if you like this project!
+
+### 📝 License
+
+This project is MIT licensed

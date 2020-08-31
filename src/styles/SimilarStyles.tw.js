@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const SimilarStyles = styled.div.attrs({
-  className: 'similarDiv absolute top-0 right-0',
+  className: 'similarDiv absolute top-0 right-0 pr-16 pt-3',
 })`
   & {
     h4 {
