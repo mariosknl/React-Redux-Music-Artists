@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-require('dotenv').config({ path: '../.env' });
-
 const fetchAlbums = createAsyncThunk('artists/fetchAlbums', async args => {
   const options = {
     method: 'GET',

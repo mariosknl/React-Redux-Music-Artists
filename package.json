@@ -13,7 +13,6 @@
     "babel-plugin-macros": "^2.8.0",
     "dotenv": "^8.2.0",
     "formik": "^2.1.5",
-    "lodash": "^4.17.20",
     "postcss-cli": "^7.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
