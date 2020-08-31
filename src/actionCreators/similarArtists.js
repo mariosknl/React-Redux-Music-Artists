@@ -10,7 +10,7 @@ const fetchSimilarArtists = createAsyncThunk(
   async args => {
     const options = {
       method: 'GET',
-      url: `http://ws.audioscrobbler.com//2.0/?method=artist.getsimilar&artist=${args}&api_key=${apiKey}&format=json`,
+      url: `https://ws.audioscrobbler.com//2.0/?method=artist.getsimilar&artist=${args}&api_key=${apiKey}&format=json`,
     };
     const response = await axios(options);
     return response.data.similarartists.artist.slice(0, 9);

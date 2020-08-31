@@ -21,7 +21,7 @@ export const fetchArtists = createAsyncThunk(
   async (args, thunkAPI) => {
     const options = {
       method: 'GET',
-      url: `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${args}&api_key=${apiKey}&format=json`,
+      url: `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${args}&api_key=${apiKey}&format=json`,
     };
     const response = await axios(options);
     thunkAPI.dispatch(fetchImages(args));
