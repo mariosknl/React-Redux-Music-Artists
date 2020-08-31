@@ -17,7 +17,6 @@ const artistsSlice = createSlice({
     loading: false,
     showModal: false,
   },
-  reducers: {},
   extraReducers: {
     [fetchArtists.pending]: state => {
       state.status = 'loading';
