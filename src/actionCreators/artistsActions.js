@@ -9,7 +9,7 @@ export const fetchImages = createAsyncThunk(
   'artists/artistImage',
   async args => {
     const options = {
-      url: `http://www.theaudiodb.com/api/v1/json/1/search.php?s=${args}`,
+      url: `https://www.theaudiodb.com/api/v1/json/1/search.php?s=${args}`,
     };
     const response = await axios(options);
     return response.data.artists[0].strArtistThumb;
@@ -21,7 +21,7 @@ export const fetchArtists = createAsyncThunk(
   async (args, thunkAPI) => {
     const options = {
       method: 'GET',
-      url: `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${args}&api_key=${apiKey}&format=json`,
+      url: `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${args}&api_key=${apiKey}&format=json`,
     };
     const response = await axios(options);
     thunkAPI.dispatch(fetchImages(args));
