@@ -12,15 +12,8 @@ const ArtistInfoStyles = styled.div.attrs({
     .bio {
       ${tw`font-mono text-2xl mt-4 no-underline`}
     }
-    & {
-      img {
-        ${tw`w-3/4 ml-4 m-auto mt-20`}
-      }
-    }
-    & {
-      span {
-        ${tw`m-auto`}
-      }
+    img {
+      ${tw`w-3/4 ml-4 m-auto mt-20`}
     }
   }
 `;

@@ -9,7 +9,7 @@ const FormStyles = styled.div.attrs({
       ${tw`w-full py-2`}
     }
     form {
-      ${tw`w-full bg-white rounded py-3`}
+      ${tw`bg-white rounded py-3`}
     }
     & .artistForm {
       ${tw`font-mono text-lg text-gray-800 font-bold`}
@@ -27,7 +27,7 @@ const FormStyles = styled.div.attrs({
       ${tw`bg-teal-700 border-teal-500`}
     }
     button:hover {
-      ${tw`bg-teal-700 text-sm border-4 py-1 text-white px-2 rounded`}
+      ${tw`bg-teal-700 text-sm border-4 text-white px-2 rounded`}
     }
   }
 `;
