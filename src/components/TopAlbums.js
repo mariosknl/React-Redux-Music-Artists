@@ -8,7 +8,7 @@ import '../styles/Modal.css';
 function TopAlbums() {
   const topAlbums = useSelector(state => state.artists.albums);
   const [showModal, setModal] = useState(false);
-  const [modelContent, setModelContent] = useState('shirtLess-Micronaut');
+  const [modelContent, setModelContent] = useState(false);
 
   const toggleModal = index => {
     setModal({ showModal: !showModal });
@@ -17,14 +17,18 @@ function TopAlbums() {
 
   const displayModal = index => (
     <>
-      <Modal>
-        <div className={showModal ? 'opacity-100' : 'hidden'}>
-          <p>{index}</p>
-          <button type="button" onClick={() => toggleModal()}>
-            X
-          </button>
-        </div>
-      </Modal>
+      {modelContent ? (
+        <Modal>
+          <div>
+            <p>{index}</p>
+            <button type="button" onClick={() => toggleModal()}>
+              X
+            </button>
+          </div>
+        </Modal>
+      ) : (
+        ''
+      )}
     </>
   );
 
