@@ -15,10 +15,10 @@ const FormStyles = styled.div.attrs({
       ${tw`font-mono text-lg text-gray-800 font-bold`}
     }
     input {
-      ${tw`w-64 appearance-none border-none text-gray-300 mr-3 py-1 px-2 leading-tight`}
+      ${tw`w-64 appearance-none bg-gray-600 border-transparent text-gray-600 mr-3 py-1 px-2 leading-tight`}
     }
     input:focus {
-      ${tw`outline-none border-2`}
+      ${tw`outline-none bg-white border-gray-800 text-gray-800`}
     }
     button {
       ${tw`w-20 flex-shrink-0 bg-teal-500 rounded self-end`}

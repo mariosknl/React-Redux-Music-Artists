@@ -6,7 +6,7 @@ const SimilarStyles = styled.div.attrs({
 })`
   & {
     h4 {
-      ${tw`font-mono text-gray-100 text-center text-3xl`}
+      ${tw`font-mono text-gray-700 text-center text-3xl`}
     }
     a {
       ${tw`font-mono text-xl text-gray-300`}
