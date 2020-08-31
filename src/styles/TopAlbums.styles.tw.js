@@ -12,7 +12,7 @@ const TopAlbumsStyles = styled.div.attrs({
       ${tw`w-4/6 h-1/2 flex flex-row items-center flex-wrap -mb-56`}
     }
     li {
-      ${tw`w-1/3 h-64 my-2`}
+      ${tw`w-1/3 h-64 my-5`}
     }
     img {
       ${tw`w-11/12 h-48 rounded`}
@@ -21,10 +21,10 @@ const TopAlbumsStyles = styled.div.attrs({
       ${tw`text-2xl mb-3 underline`}
     }
     span {
-      ${tw`text-xl`}
+      ${tw`text-base`}
     }
     button {
-      ${tw`bg-gray-300 text-black font-bold py-2 px-2 my-1 rounded-full`}
+      ${tw`bg-gray-300 text-black font-bold py-2 px-2 my-1 rounded-full mr-1`}
     }
     button:hover {
       ${tw`bg-gray-600 text-white`}

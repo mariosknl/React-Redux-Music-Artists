@@ -1,11 +1,7 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {
-      inset: {
-        1: '1%',
-      },
-    },
+    extend: {},
   },
   variants: {},
   plugins: [],

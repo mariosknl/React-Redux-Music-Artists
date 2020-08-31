@@ -18,9 +18,9 @@ function TopAlbums() {
   const displayModal = index => (
     <>
       {modelContent ? (
-        <Modal>
+        <Modal className="h-full overflow-y-hidden">
           <div>
-            <p>{index}</p>
+            <p className="text-base">{index}</p>
             <button type="button" onClick={() => toggleModal()}>
               X
             </button>
@@ -41,17 +41,28 @@ function TopAlbums() {
           <React.Fragment key={uuidv4()}>
             <li key={top.strMusicBrainzID}>
               <h3 key={uuidv4()}>{top.strAlbum}</h3>
-              <img
-                src={`${top.strAlbumThumb}`}
-                alt={`${top.strAlbum}`}
-                key={uuidv4()}
-              />
-              <button
-                type="button"
-                onClick={() => toggleModal(top.strDescriptionEN)}
-              >
-                Album Info
-              </button>
+              {top.strAlbumThumb ? (
+                <img
+                  src={`${top.strAlbumThumb}`}
+                  alt={`${top.strAlbum}`}
+                  key={uuidv4()}
+                />
+              ) : (
+                <img
+                  src="https://www.indiaspora.org/wp-content/uploads/2018/10/image-not-available.jpg"
+                  alt="N/A"
+                />
+              )}
+              {top.strDescriptionEN ? (
+                <button
+                  type="button"
+                  onClick={() => toggleModal(top.strDescriptionEN)}
+                >
+                  Album Info
+                </button>
+              ) : (
+                ''
+              )}
               {top.intYearReleased === null ? (
                 ''
               ) : (
