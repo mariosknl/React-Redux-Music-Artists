@@ -9,7 +9,7 @@ const ArtistInfoStyles = styled.div`
       }
 
       .bio {
-        ${tw`font-mono text-2xl mt-4 no-underline`}
+        ${tw`font-mono text-xl mt-4 no-underline`}
       }
       & img {
         ${tw`w-3/4 ml-4 m-auto mt-20`}

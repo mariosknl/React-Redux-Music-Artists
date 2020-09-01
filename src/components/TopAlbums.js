@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 function TopAlbums() {
   const topAlbums = useSelector(state => state.artists.albums);
@@ -28,7 +28,7 @@ function TopAlbums() {
                 />
               )}
               {top.strDescriptionEN ? (
-                <Link to={`/album/${index}`}>See more</Link>
+                <Link to={`/album/${index}`}>See more info</Link>
               ) : (
                 ''
               )}

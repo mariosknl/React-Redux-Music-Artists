@@ -1,9 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { useSelector } from 'react-redux';
-// import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-// import ArtistDetails from './Details';
-// import Modal from './Modal';
 
 function ArtistInfo() {
   const artists = useSelector(state => state.artists);
@@ -22,18 +19,7 @@ function ArtistInfo() {
       ) : (
         <h2 className="sm:text-center sm:mt-16 sm:text-5xl">{name}</h2>
       )}
-      <p className="bio">{copyBio[0]}</p>
-      {/* <Router>
-        <Link to={`/${name}`}>{name} More Details</Link>
-        <Switch>
-          <Route exact path="/album/:id">
-            <Modal />
-          </Route>
-          <Route exact path="/details">
-            <ArtistDetails />
-          </Route>
-        </Switch>
-      </Router> */}
+      <p className="bio sm:text-base">{copyBio[0]}</p>
     </>
   );
 }
