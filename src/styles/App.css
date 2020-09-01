@@ -21,3 +21,25 @@
   background-position: 0 0;
   overflow: scroll;
 }
+
+@media screen and (max-width: 1200px) {
+  .spikes {
+    height: 150vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .spikes {
+    height: 172vh;
+  }
+}
+@media screen and (max-width: 900px) {
+  .spikes {
+    height: 200vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .spikes {
+    height: 250vh;
+  }
+}

@@ -7,6 +7,15 @@ import similarArt from '../actionCreators/similarArtists';
 const { fetchAlbums } = fetchTop;
 const { fetchSimilarArtists } = similarArt;
 
+const defaultState = {
+  artists: [],
+  albums: [],
+  similar: [],
+  image: '',
+  loading: false,
+  showModal: false,
+};
+
 const artistsSlice = createSlice({
   name: 'artists',
   initialState: {
@@ -16,6 +25,12 @@ const artistsSlice = createSlice({
     image: '',
     loading: false,
     showModal: false,
+  },
+  reducers: {
+    resForm: () => ({
+      ...defaultState,
+      errorMessage: null,
+    }),
   },
   extraReducers: {
     [fetchArtists.pending]: state => {
@@ -34,6 +49,9 @@ const artistsSlice = createSlice({
       state.status = 'loading';
     },
     [fetchAlbums.fulfilled]: (state, action) => {
+      if (action.payload == null) {
+        state.errorMessage = 'Invalid Query';
+      }
       state.status = 'succeeded';
       state.loading = 'completed';
       state.albums = action.payload;
@@ -68,4 +86,5 @@ const artistsSlice = createSlice({
   },
 });
 
+export const { resForm } = artistsSlice.actions;
 export default artistsSlice.reducer;

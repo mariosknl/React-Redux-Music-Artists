@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import { fetchArtists, fetchImages } from '../actionCreators/artistsActions';
 import fetchAlb from '../actionCreators/albumsActions';
@@ -7,6 +7,7 @@ import fetchSim from '../actionCreators/similarArtists';
 import ArtistInfo from './ArtistInfo';
 import Similar from './Similar';
 import TopAlbums from './TopAlbums';
+import { resForm } from '../reducers/artistsSlice';
 import ArtistDetails from './ArtistDetails';
 import ArtistImage from './ArtistImage';
 import FormStyles from '../styles/FormStyles.styles.tw';
@@ -18,6 +19,9 @@ import TopAlbumsStyles from '../styles/TopAlbums.styles.tw';
 const SearchArtist = () => {
   const { fetchAlbums } = fetchAlb;
   const { fetchSimilarArtists } = fetchSim;
+
+  const errorMessage = useSelector(state => state.artists.errorMessage);
+
   const dispatch = useDispatch();
 
   const Formik = useFormik({
@@ -29,6 +33,14 @@ const SearchArtist = () => {
       dispatch(fetchImages(values.artist));
     },
   });
+  if (errorMessage) {
+    return (
+      <>
+        <h1>{errorMessage}</h1>
+        <button onClick={() => dispatch(resForm())}>Search Again</button>
+      </>
+    );
+  }
 
   return (
     <>
