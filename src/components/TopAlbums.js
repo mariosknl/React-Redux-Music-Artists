@@ -1,43 +1,17 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import Modal from './Modal';
-import '../styles/Modal.css';
+import { Link } from 'react-router-dom';
 
 function TopAlbums() {
   const topAlbums = useSelector(state => state.artists.albums);
-  const [showModal, setModal] = useState(false);
-  const [modelContent, setModelContent] = useState(false);
-
-  const toggleModal = index => {
-    setModal({ showModal: !showModal });
-    setModelContent(index);
-  };
-
-  const displayModal = index => (
-    <>
-      {modelContent ? (
-        <Modal className="h-full overflow-y-hidden">
-          <div>
-            <p className="text-base">{index}</p>
-            <button type="button" onClick={() => toggleModal()}>
-              X
-            </button>
-          </div>
-        </Modal>
-      ) : (
-        ''
-      )}
-    </>
-  );
 
   return (
     <>
-      {displayModal(modelContent)}
       {topAlbums.length === 0 ? '' : <h2>Famous Albums</h2>}
       <ul>
-        {topAlbums.map(top => (
+        {topAlbums.map((top, index) => (
           <React.Fragment key={uuidv4()}>
             <li key={top.strMusicBrainzID}>
               <h3 key={uuidv4()}>{top.strAlbum}</h3>
@@ -54,12 +28,7 @@ function TopAlbums() {
                 />
               )}
               {top.strDescriptionEN ? (
-                <button
-                  type="button"
-                  onClick={() => toggleModal(top.strDescriptionEN)}
-                >
-                  Album Info
-                </button>
+                <Link to={`/album/${index}`}>See more</Link>
               ) : (
                 ''
               )}
