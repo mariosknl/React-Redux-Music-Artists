@@ -15,16 +15,16 @@ const TopAlbumsStyles = styled.div.attrs({
       ${tw`w-1/3 h-64 my-5`}
     }
     img {
-      ${tw`w-11/12 h-48 rounded`}
+      ${tw`w-11/12 h-48 rounded sm:m-1 sm:h-24`}
     }
     h3 {
-      ${tw`text-2xl mb-3 underline`}
+      ${tw`text-2xl mb-3 underline sm:text-xs`}
     }
     span {
-      ${tw`text-base`}
+      ${tw`text-base sm:text-xs`}
     }
     button {
-      ${tw`bg-gray-300 text-black font-bold py-2 px-2 my-1 rounded-full mr-1`}
+      ${tw`bg-gray-300 text-black font-bold py-2 px-2 my-1 rounded-full mr-1 sm:py-1 sm:px-1`}
     }
     button:hover {
       ${tw`bg-gray-600 text-white`}

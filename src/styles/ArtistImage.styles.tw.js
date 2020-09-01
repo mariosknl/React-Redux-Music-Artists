@@ -6,7 +6,7 @@ const ArtistImageStyles = styled.div.attrs({
 })`
   & {
     img {
-      ${tw`w-full h-full`}
+      ${tw`w-full h-full xss:max-w-xxxs`}
     }
   }
 `;

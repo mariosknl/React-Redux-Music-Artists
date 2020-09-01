@@ -14,7 +14,11 @@ function ArtistInfo() {
 
   return (
     <>
-      {artists.length === 0 ? '' : <h2>{name}</h2>}
+      {artists.length === 0 ? (
+        ''
+      ) : (
+        <h2 className="sm:text-center sm:mt-16 sm:text-5xl">{name}</h2>
+      )}
       <p className="bio">{copyBio[0]}</p>
     </>
   );

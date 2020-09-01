@@ -12,7 +12,11 @@ function ArtistImage() {
 
   return (
     <>
-      <img src={`${imageUrl}`} alt={`${imageUrl}`} />
+      <img
+        src={`${imageUrl}`}
+        alt={`${imageUrl}`}
+        className="mt-2 w-8/12 mx-auto"
+      />
     </>
   );
 }

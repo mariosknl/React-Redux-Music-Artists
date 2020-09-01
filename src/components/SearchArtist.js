@@ -37,7 +37,9 @@ const SearchArtist = () => {
     return (
       <>
         <h1>{errorMessage}</h1>
-        <button onClick={() => dispatch(resForm())}>Search Again</button>
+        <button type="submit" onClick={() => dispatch(resForm())}>
+          Search Again
+        </button>
       </>
     );
   }
@@ -48,12 +50,12 @@ const SearchArtist = () => {
         <div className="containerForm">
           <form onSubmit={Formik.handleSubmit}>
             <label htmlFor="artist" className="artistForm">
-              Artist
+              <p>Artist</p>
               <input
                 type="text"
                 id="artist"
                 value={Formik.artist}
-                placeholder="Search for an artist"
+                placeholder="Search..."
                 onChange={Formik.handleChange}
                 onBlur={Formik.handleBlur}
               />
@@ -65,13 +67,13 @@ const SearchArtist = () => {
 
       <ArtistInfoStyles>
         <div>
-          <ArtistInfo />
-        </div>
-        <div>
           <ArtistImage />
           <ArtistDetailsStyles>
             <ArtistDetails />
           </ArtistDetailsStyles>
+        </div>
+        <div>
+          <ArtistInfo />
         </div>
       </ArtistInfoStyles>
 

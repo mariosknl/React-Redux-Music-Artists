@@ -12,10 +12,10 @@ const FormStyles = styled.div.attrs({
       ${tw`bg-white rounded py-3`}
     }
     & .artistForm {
-      ${tw`font-mono text-lg xxs:text-sm text-gray-800 font-bold`}
+      ${tw`font-mono text-lg text-gray-800 font-bold`}
     }
     input {
-      ${tw`w-64 appearance-none bg-gray-600 border-transparent text-gray-600 mr-3 py-1 px-2 leading-tight xxs:w-12`}
+      ${tw`w-64 appearance-none bg-gray-600 border-transparent text-gray-600 mr-3 py-1 px-2 leading-tight`}
     }
     input:focus {
       ${tw`outline-none bg-white border-gray-800 text-gray-800`}
