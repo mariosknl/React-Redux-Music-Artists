@@ -20,9 +20,17 @@ function TopAlbums() {
       {years.length === 0 ? (
         ''
       ) : (
-        <select onChange={e => dispatch(changeFilter(e.currentTarget.value))}>
+        <select
+          value=""
+          onChange={e => dispatch(changeFilter(e.currentTarget.value))}
+          onBlur={e => dispatch(changeFilter(e.currentTarget.value))}
+          disabled={years.length === 0}
+        >
+          <option>All</option>
           {years.map(year => (
-            <option key={uuidv4()}>{year}</option>
+            <option key={uuidv4()} value={year}>
+              {year}
+            </option>
           ))}
         </select>
       )}

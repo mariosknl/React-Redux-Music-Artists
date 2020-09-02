@@ -23,7 +23,7 @@ const artistsSlice = createSlice({
     albums: [],
     similar: [],
     image: '',
-    filter: '2003',
+    filter: 'All',
     loading: false,
     showModal: false,
   },
