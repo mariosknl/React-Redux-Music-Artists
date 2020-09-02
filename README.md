@@ -21,7 +21,7 @@ I'm using Vercel to deploy my app.Feel free to check the live version of my appl
 
 # Live Version
 
-[Live-Link](https://react-redux-catalogue-of-statistics.vercel.app/)
+[Live-Link](https://react-redux-catalogue-of-statistics-git-routing.mariosknl.vercel.app/)
 
 # Video Presentation
 
