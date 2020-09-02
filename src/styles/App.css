@@ -24,21 +24,31 @@
 
 @media screen and (min-width: 640px) {
   .spikes {
-    height: 110vh;
+    height: 140vh;
   }
 }
 @media screen and (min-width: 768px) {
   .spikes {
-    height: 200vh;
+    height: 145vh;
   }
 }
 @media screen and (min-width: 1024px) {
   .spikes {
-    height: 200vh;
+    height: 160vh;
   }
 }
 @media screen and (min-width: 1280px) {
   .spikes {
-    height: 200vh;
+    height: 185vh;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .spikes {
+    height: 190vh;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .spikes {
+    height: 202vh;
   }
 }

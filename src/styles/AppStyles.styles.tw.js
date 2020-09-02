@@ -8,10 +8,10 @@ const AppStyles = styled.div.attrs({
 })`
   & {
     h1 {
-      ${tw`font-mono text-5xl text-center text-gray-100  mt-5 `}
+      ${tw`font-mono text-5xl text-center text-gray-100  mt-5`}
     }
     p {
-      ${tw`underline text-2xl text-bold text-center tracking-widest subpixel-antialiased font-mono`}
+      ${tw`underline text-2xl text-bold text-center tracking-widest subpixel-antialiased font-mono md:text-xl md:mb-2`}
     }
   }
 `;

@@ -1,10 +1,6 @@
 module.exports = {
   purge: [],
-  theme: {
-    fontSize: {
-      xxs: '0.5rem',
-    },
-  },
+  theme: {},
   variants: {},
   plugins: [],
 };

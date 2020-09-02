@@ -15,13 +15,13 @@ const TopAlbumsStyles = styled.div.attrs({
       ${tw`w-1/3 h-64 my-5`}
     }
     img {
-      ${tw`w-11/12 h-48 rounded sm:m-1 sm:h-24`}
+      ${tw`sm:h-24 w-11/12 md:h-48  rounded sm:m-1`}
     }
     a {
-      ${tw`sm:text-xs`}
+      ${tw`sm:text-xs md:font-bold`}
     }
     h3 {
-      ${tw`text-2xl mb-3 underline sm:text-xxs sm:pl-2 `}
+      ${tw`text-2xl mb-3 underline sm:text-xs sm:pl-2 md:text-sm`}
     }
     span {
       ${tw`text-base sm:text-xs`}

@@ -28,10 +28,13 @@ function TopAlbums() {
                 />
               )}
               {top.strDescriptionEN ? (
-                <Link to={`/album/${index}`}>See more info</Link>
+                <Link to={`/album/${index}`} className="info">
+                  See more info
+                </Link>
               ) : (
                 ''
               )}
+              <br />
               {top.intYearReleased === null ? (
                 ''
               ) : (
