@@ -1,15 +1,31 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import FilterAlb from '../selectors/FilterAlbums';
+import YearSel from '../selectors/YearSelector';
+import { changeFilter } from '../reducers/artistsSlice';
 
 function TopAlbums() {
-  const topAlbums = useSelector(state => state.artists.albums);
+  const { FilterAlbums } = FilterAlb;
+  const { YearSelect } = YearSel;
+  const dispatch = useDispatch();
+  const topAlbums = useSelector(FilterAlbums);
+  const years = useSelector(YearSelect);
 
   return (
     <>
       {topAlbums.length === 0 ? '' : <h2>Famous Albums</h2>}
+      {years.length === 0 ? (
+        ''
+      ) : (
+        <select onChange={e => dispatch(changeFilter(e.currentTarget.value))}>
+          {years.map(year => (
+            <option key={uuidv4()}>{year}</option>
+          ))}
+        </select>
+      )}
       <ul>
         {topAlbums.map((top, index) => (
           <React.Fragment key={uuidv4()}>

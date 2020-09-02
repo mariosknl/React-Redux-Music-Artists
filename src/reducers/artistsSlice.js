@@ -23,6 +23,7 @@ const artistsSlice = createSlice({
     albums: [],
     similar: [],
     image: '',
+    filter: '2003',
     loading: false,
     showModal: false,
   },
@@ -30,6 +31,10 @@ const artistsSlice = createSlice({
     resForm: () => ({
       ...defaultState,
       errorMessage: null,
+    }),
+    changeFilter: (state, action) => ({
+      ...state,
+      filter: action.payload,
     }),
   },
   extraReducers: {
@@ -86,5 +91,5 @@ const artistsSlice = createSlice({
   },
 });
 
-export const { resForm } = artistsSlice.actions;
+export const { resForm, changeFilter } = artistsSlice.actions;
 export default artistsSlice.reducer;
