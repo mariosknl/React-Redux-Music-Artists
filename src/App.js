@@ -1,26 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import SearchArtist from './components/SearchArtist';
+import './index.css';
+import './styles/App.css';
+import AppStyles from './styles/AppStyles.styles.tw';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <AppStyles>
+    <section className="spikes">
+      <h1>Search for your favorite artist</h1>
+      <p>Welcome to my Music Artist Finder Application</p>
+      <SearchArtist />
+    </section>
+  </AppStyles>
+);
 
 export default App;

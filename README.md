@@ -1,69 +1,57 @@
-# React_capstone_Categories
-React &amp; Redux Capstone - Catalogue of Statistics
+# React & Redux - Catalogue of Statistics
 
-## Available Scripts
+In this project, I'm using 2 different APIs to retrieve data about music artists and their most famous albums.
+You only type the artist's name and you get back their short bio, an artist's image, their most famous albums along with individual album's information directs you to another page in which you can read more about the specific album and also see the cover art of it. At the right side of the album's section you can find 10 similar artists, based on the artist's genre. You can click at any of these links and you will see its details in the same page. Lastly, just below the artist's image you can find some extra details taken from its profile at Last.fm, a website I used to retrieve the data from.
+I'm using Vercel to deploy my app.Feel free to check the live version of my application by click the Live Demo Link.
 
-In the project directory, you can run:
+# BUILD WITH
 
-### `yarn start`
+- ReactJS
+- Redux
+- Tailwind CSS
+- React Hooks
+- Redux/Toolkit
+- Styled Components
+- Formik
+- Axios
+- Uuidv4
+- React Router
+- Prettier
+- Eslint
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Live Version
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Live-Link](https://react-redux-catalogue-of-statistics-git-routing.mariosknl.vercel.app/)
 
-### `yarn test`
+# Video Presentation
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Video-Presentation](https://www.loom.com/share/f8aca88e41024884bed282e427228e22)
 
-### `yarn build`
+# AUTHOR
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Github: [@mariosknl](https://github.com/mariosknl)
+- Twitter: [@mariosknl](https://twitter.com/MariosKnl)
+- Linkedln: [marios-kanellopoulos](https://www.linkedin.com/in/marios-kanellopoulos)
+- Portfolio: [marios-kanellopoulos](https://marioskanellopoulos.com/)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# Show your support
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Give ⭐️ if you like this project!
 
-### `yarn eject`
+# Acknowledgments
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Microverse
+- [Expedito Andrade](https://github.com/expjazz)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🤝 Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Contributions, issues, and feature requests are welcome!
+Feel free to check the issues page.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Show your support
 
-## Learn More
+Give a ⭐️ if you like this project!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 📝 License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project is MIT licensed
