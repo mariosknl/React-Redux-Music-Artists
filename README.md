@@ -1,4 +1,4 @@
-# React & Redux - Catalogue of Statistics
+# React & Redux - Music Artists
 
 In this project, I'm using 2 different APIs to retrieve data about music artists and their most famous albums.
 You only type the artist's name and you get back their short bio, an artist's image, their most famous albums along with individual album's information directs you to another page in which you can read more about the specific album and also see the cover art of it. At the right side of the album's section you can find 10 similar artists, based on the artist's genre. You can click at any of these links and you will see its details in the same page. Lastly, just below the artist's image you can find some extra details taken from its profile at Last.fm, a website I used to retrieve the data from.
