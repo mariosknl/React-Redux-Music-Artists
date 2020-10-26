@@ -1,5 +1,13 @@
 {
-  "extends": [
-    "config:base"
-  ]
+  "extends": ["config:base"],
+  "timezone": "Europe/Athens",
+  "schedule": [
+    "before 5am"
+  ],
+  "packageRules": [
+        {
+          "updateTypes": ["patch", "pin", "digest"],
+          "automerge": true
+        }
+      ]
 }
