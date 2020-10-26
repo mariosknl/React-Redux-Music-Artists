@@ -1,7 +1,7 @@
 {
   "extends": ["config:base"],
   "timezone": "Europe/Athens",
-  "schedule":  "schedule": [
+  "schedule": [
     "before 5am"
   ],
   "packageRules": [
