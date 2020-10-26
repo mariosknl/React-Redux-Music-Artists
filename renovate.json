@@ -1,7 +1,7 @@
 {
   "extends": ["config:base"],
   "timezone": "Europe/Athens",
-  "schedule": ["every weekend"],
+  "schedule": ["daily"],
   "packageRules": [
         {
           "updateTypes": ["patch", "pin", "digest"],
